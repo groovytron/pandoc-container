@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - make
+  - git clone https://github.com/HE-Arc/rapport-technique.git
+  - ./test.sh
