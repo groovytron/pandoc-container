@@ -18,6 +18,7 @@ RUN apt-get update \
         fonts-crosextra-carlito \
         fonts-texgyre \
         git \
+        inotify-tools \
         lmodern \
         locales \
         make \
