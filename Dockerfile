@@ -16,6 +16,7 @@ RUN apt-get update \
         fonts-croscore \
         fonts-crosextra-carlito \
         fonts-texgyre \
+        git \
         lmodern \
         locales \
         make \
@@ -32,10 +33,12 @@ RUN apt-get update \
     && apt-get autoremove --quiet --yes \
     && apt-get clean \
     && wget https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-1-amd64.deb \
-        -O pandoc.deb \
+        --output-document pandoc.deb \
+        --quiet \
     && dpkg -i pandoc.deb \
     && wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/linux-pandoc_2_7.tar.gz \
-        -O pandoc-crossref.tar.gz \
+        --output-document pandoc-crossref.tar.gz \
+        --quiet
     && tar xf pandoc-crossref.tar.gz \
     && mv pandoc-crossref /usr/local/bin
 

@@ -1,3 +1,6 @@
 #!/bin/bash
 
-docker run -it -v $(pwd)/rapport-technique:/home/dev/doc --user dev doc-container:latest make
+docker run -it \
+    --user dev \
+    doc-container:latest \
+    bash -c "git clone https://github.com/HE-Arc/rapport-technique.git && cd rapport-technique && make"

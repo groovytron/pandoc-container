@@ -5,5 +5,4 @@ services:
 
 script:
   - make
-  - git clone https://github.com/HE-Arc/rapport-technique.git
   - ./test.sh
