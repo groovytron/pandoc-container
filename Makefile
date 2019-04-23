@@ -1,5 +1,4 @@
-BUILD_NAME=doc-container
-CONTAINER_NAME=doc-container
+BUILD_NAME=pandoc-container
 COMMON_BUILD_TAGS=--build-arg VCS_REF="$(shell git rev-parse HEAD)" --build-arg BUILD_DATE="$(shell date -u +"%Y-%m-%dT%H:%m:%SZ")"
 
 .PHONY:build
