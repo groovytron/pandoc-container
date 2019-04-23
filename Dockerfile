@@ -2,8 +2,9 @@
 
 FROM ubuntu:bionic
 
-ARG PANDOC_VERSION=2.7.1
+ARG PANDOC_VERSION=2.7.2
 ARG PANDOC_CROSSREF_VERSION=0.3.4.0d
+ARG PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -40,7 +41,12 @@ RUN apt-get update \
         --output-document pandoc-crossref.tar.gz \
         --quiet \
     && tar xf pandoc-crossref.tar.gz \
-    && mv pandoc-crossref /usr/local/bin
+    && mv pandoc-crossref /usr/local/bin \
+    && wget https://github.com/owickstrom/pandoc-include-code/releases/download/v${PANDOC_INCLUDE_CODE_VERSION}/pandoc-include-code-linux-ghc8-pandoc-1-19.tar.gz \
+        --output-document pandoc-include-code.tar.gz \
+        --quiet \
+    && tar xf pandoc-include-code.tar.gz \
+    && mv pandoc-include-code /usr/local/bin
 
 
 # Set the locale
@@ -63,7 +69,8 @@ WORKDIR /home/dev/doc
 
 # Fix permissions issues
 RUN chmod -R a+wrx /home/dev/doc
-RUN chmod -R a+wrx /usr/local/bin/pandoc-crossref
+RUN chmod -R a+rx /usr/local/bin/pandoc-crossref
+RUN chmod -R a+rx /usr/local/bin/pandoc-include-code
 
 # Label schema related variables and metadata
 ARG BUILD_DATE
