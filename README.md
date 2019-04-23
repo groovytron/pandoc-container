@@ -6,6 +6,7 @@ Container embedding pandoc and some pandoc filter to convert files from a format
 
 ## Softwares embedded in the container
 
+- [curl](https://curl.haxx.se) to generate diagrams using a tool like [kroki](https://github.com/yuzutech/kroki)
 - [inotify-tools](https://github.com/rvoicilas/inotify-tools) if you want to [rebuild your documentation on every file change with inotifywait](https://stackoverflow.com/a/23734495)
 - `make`
 - [pandoc](https://pandoc.org)

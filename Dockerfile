@@ -12,6 +12,7 @@ RUN apt-get update \
     && apt-get upgrade --quiet --yes \
     && apt-get update --quiet \
     && apt-get install --quiet --yes \
+        curl \
         fonts-inconsolata \
         fonts-linuxlibertine \
         fonts-croscore \
