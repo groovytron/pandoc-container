@@ -15,6 +15,6 @@ build:
 test:
 	./test.sh
 
-PHONY:clean
+.PHONY:clean
 clean:
 	docker images | grep $(BUILD_NAME) | tr -s ' ' | cut -d ' ' -f2 | xargs -I {} echo $(BUILD_NAME):{}
