@@ -23,6 +23,7 @@ RUN apt-get update \
         inotify-tools \
         lmodern \
         locales \
+        librsvg2-bin \
         make \
         tex-gyre \
         texlive-fonts-extra \
