@@ -50,7 +50,6 @@ RUN apt-get update \
     && tar xf pandoc-include-code.tar.gz \
     && mv pandoc-include-code /usr/local/bin
 
-
 # Set the locale
 RUN locale-gen en_US
 RUN locale-gen en_US.UTF-8
