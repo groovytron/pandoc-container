@@ -12,6 +12,7 @@ RUN apt-get update \
     && apt-get upgrade --quiet --yes \
     && apt-get update --quiet \
     && apt-get install --quiet --yes \
+        bash-completion \
         curl \
         fonts-inconsolata \
         fonts-linuxlibertine \
@@ -69,8 +70,12 @@ RUN groupadd --gid 1000 dev \
 # Mount your app source code directory into that folder
 WORKDIR /home/dev/doc
 
+# Add bash completion
+RUN echo 'source /etc/profile.d/bash_completion.sh' >> ~/.bashrc
+RUN echo 'source /etc/profile.d/bash_completion.sh' >> /home/dev/.bashrc
+
 # Fix permissions issues
-RUN chmod -R a+wrx /home/dev/doc
+RUN chmod -R a+wrx /home/dev
 RUN chmod -R a+rx /usr/local/bin/pandoc-crossref
 RUN chmod -R a+rx /usr/local/bin/pandoc-include-code
 
