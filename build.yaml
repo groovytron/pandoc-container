@@ -1,0 +1,24 @@
+# This file is only used to build multiple images
+version: '3'
+
+services:
+  pandoc2.7.3:
+    image: ${COMPOSE_BUILD_NAME}:2.7.3
+    build:
+      dockerfile: 2.7.3/Dockerfile
+      context: .
+      args:
+        - PANDOC_VERSION=2.7.3
+        - PANDOC_CROSSREF_VERSION=0.3.4.0d
+        - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
+        - VCS_REF=$VCS_REF
+  pandoc2.7.2:
+    image: ${COMPOSE_BUILD_NAME}:2.7.2
+    build:
+      dockerfile: 2.7.2/Dockerfile
+      context: .
+      args:
+        - PANDOC_VERSION=2.7.2
+        - PANDOC_CROSSREF_VERSION=0.3.4.1
+        - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
+        - VCS_REF=$VCS_REF

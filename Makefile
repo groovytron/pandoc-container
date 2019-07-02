@@ -1,20 +1,28 @@
-BUILD_NAME=pandoc-container
-COMMON_BUILD_TAGS=--build-arg VCS_REF="$(shell git rev-parse HEAD)" --build-arg BUILD_DATE="$(shell date -u +"%Y-%m-%dT%H:%m:%SZ")"
+BUILD_NAME=pandoc
+COMPOSE_BUILD_NAME=pandoc-container
+VERSIONS=2.7.3 2.7.2
+ALL=$(addprefix pandoc,$(VERSIONS))
+VCS_REF="$(shell git rev-parse HEAD)"
+BUILD_DATE="$(shell date -u +"%Y-%m-%dT%H:%m:%SZ")"
 
-.PHONY:build
-build:
-	docker build \
-		$(COMMON_BUILD_TAGS) \
-		--build-arg PANDOC_VERSION=2.7.2 \
-		--build-arg PANDOC_CROSSREF_VERSION=0.3.4.0d \
-		--build-arg PANDOC_INCLUDE_CODE_VERSION=1.2.0.2 \
-		--tag $(BUILD_NAME):latest \
-		.
+.PHONY: all
+all: $(ALL)
 
-.PHONY:test
-test:
-	./test.sh
+.PHONY: $(ALL)
+$(ALL):
+	BUILD_DATE=$(BUILD_DATE) \
+	BUILD_NAME=$(BUILD_NAME) \
+	COMPOSE_BUILD_NAME=$(COMPOSE_BUILD_NAME) \
+	VCS_REF=$(VCS_REF) \
+	docker-compose -f build.yaml build \
+		$@
+
+# .PHONY:test
+# test:
+# 	./test.sh
 
 .PHONY:clean
 clean:
-	docker images | grep $(BUILD_NAME) | tr -s ' ' | cut -d ' ' -f2 | xargs -I {} echo $(BUILD_NAME):{}
+	for VERSION in $(VERSIONS); do \
+		docker image rm -f $(COMPOSE_BUILD_NAME):$$VERSION; \
+	done
