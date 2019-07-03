@@ -4,6 +4,11 @@
 
 Container embedding pandoc and some pandoc filter to convert files from a format to another.
 
+## Supported tags and respective `Dockerfile` links
+
+- `2.7.3`, `latest` ([2.7.3/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.7.3/Dockerfile))
+- `2.7.2` ([2.7.2/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.7.2/Dockerfile))
+
 ## Softwares embedded in the container
 
 - [curl](https://curl.haxx.se) to generate diagrams using a tool like [kroki](https://github.com/yuzutech/kroki)
