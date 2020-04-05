@@ -2,23 +2,35 @@
 version: '3'
 
 services:
-  pandoc2.7.3:
-    image: ${COMPOSE_BUILD_NAME}:2.7.3
+  pandoc2.7:
+    image: ${COMPOSE_BUILD_NAME}:2.7
     build:
-      dockerfile: 2.7.3/Dockerfile
+      dockerfile: 2.7/Dockerfile
       context: .
       args:
         - PANDOC_VERSION=2.7.3
         - PANDOC_CROSSREF_VERSION=0.3.4.0d
         - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
         - VCS_REF=$VCS_REF
-  pandoc2.7.2:
-    image: ${COMPOSE_BUILD_NAME}:2.7.2
+
+  pandoc2.8:
+    image: ${COMPOSE_BUILD_NAME}:2.8
     build:
-      dockerfile: 2.7.2/Dockerfile
+      dockerfile: 2.8/Dockerfile
       context: .
       args:
-        - PANDOC_VERSION=2.7.2
-        - PANDOC_CROSSREF_VERSION=0.3.4.0d
+        - PANDOC_VERSION=2.8.1
+        - PANDOC_CROSSREF_VERSION=0.3.6.1a
+        - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
+        - VCS_REF=$VCS_REF
+
+  pandoc2.9:
+    image: ${COMPOSE_BUILD_NAME}:2.9
+    build:
+      dockerfile: 2.9/Dockerfile
+      context: .
+      args:
+        - PANDOC_VERSION=2.9.2.1
+        - PANDOC_CROSSREF_VERSION=0.3.6.2
         - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
         - VCS_REF=$VCS_REF
