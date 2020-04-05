@@ -42,7 +42,7 @@ RUN apt-get update \
         --quiet \
     && dpkg -i pandoc.deb \
     && rm pandoc.deb \
-    && wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/linux-pandoc_2_7.tar.gz \
+    && wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/pandoc-crossref-Linux-2.8.1.tar.xz \
         --output-document pandoc-crossref.tar.gz \
         --quiet \
     && tar xf pandoc-crossref.tar.gz \

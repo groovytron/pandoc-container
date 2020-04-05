@@ -20,7 +20,7 @@ services:
       context: .
       args:
         - PANDOC_VERSION=2.8.1
-        - PANDOC_CROSSREF_VERSION=0.3.6.1a
+        - PANDOC_CROSSREF_VERSION=0.4.0.0-alpha6b
         - PANDOC_INCLUDE_CODE_VERSION=1.2.0.2
         - VCS_REF=$VCS_REF
 
