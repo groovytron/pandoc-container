@@ -6,8 +6,9 @@ Container embedding pandoc and some pandoc filter to convert files from a format
 
 ## Supported tags and respective `Dockerfile` links
 
-- `2.7.3`, `latest` ([2.7.3/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.7.3/Dockerfile))
-- `2.7.2` ([2.7.2/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.7.2/Dockerfile))
+- `2.9`, `latest` ([2.9/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.9/Dockerfile))
+- `2.8` ([2.8/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.8/Dockerfile))
+- `2.7` ([2.7/Dockerfile](https://github.com/groovytron/pandoc-container/blob/master/2.7/Dockerfile))
 
 ## Softwares embedded in the container
 
