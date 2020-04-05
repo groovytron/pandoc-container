@@ -98,4 +98,4 @@ LABEL maintainer="Julien M'Poy <julien.mpoy@gmail.com>" \
     org.opencontainers.image.title="Pandoc Container" \
     org.opencontainers.image.url="https://github.com/groovytron/pandoc-container" \
     org.opencontainers.image.vendor="Julien M'Poy <julien.mpoy@gmail.com>" \
-    org.opencontainers.image.version="2.7.3"
+    org.opencontainers.image.version="2.8"
