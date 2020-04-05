@@ -5,8 +5,9 @@ services:
 
 env:
   matrix:
-    - PANDOC_VERSION=2.7.2
-    - PANDOC_VERSION=2.7.3
+    - PANDOC_VERSION=2.7
+    - PANDOC_VERSION=2.8
+    - PANDOC_VERSION=2.9
 
 script:
   - make "pandoc$PANDOC_VERSION"

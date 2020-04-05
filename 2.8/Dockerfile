@@ -42,7 +42,7 @@ RUN apt-get update \
         --quiet \
     && dpkg -i pandoc.deb \
     && rm pandoc.deb \
-    && wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/linux-pandoc_2_7.tar.gz \
+    && wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${PANDOC_CROSSREF_VERSION}/pandoc-crossref-Linux-2.8.1.tar.xz \
         --output-document pandoc-crossref.tar.gz \
         --quiet \
     && tar xf pandoc-crossref.tar.gz \
@@ -98,4 +98,4 @@ LABEL maintainer="Julien M'Poy <julien.mpoy@gmail.com>" \
     org.opencontainers.image.title="Pandoc Container" \
     org.opencontainers.image.url="https://github.com/groovytron/pandoc-container" \
     org.opencontainers.image.vendor="Julien M'Poy <julien.mpoy@gmail.com>" \
-    org.opencontainers.image.version="2.7.3"
+    org.opencontainers.image.version="2.8"
